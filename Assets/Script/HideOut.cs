@@ -9,6 +9,7 @@ public class HideOut : MonoBehaviour
 {
     [Header("Trigger")]
     [SerializeField] private CircleCollider2D trigger;
+    [SerializeField] private Collider2D collider;
     [Header("UI")]
     [SerializeField] private Canvas signInput;
     [SerializeField] private TextMeshProUGUI messageInput;
@@ -96,7 +97,7 @@ public class HideOut : MonoBehaviour
         if (other.TryGetComponent(out PlayerController player))
         {
             player.currentHideout = this;
-            messageInput.text = "Press (E) to hide";
+            messageInput.text = "Press (Space) to hide";
             SetSignVisible(true);
         }
     }
@@ -117,7 +118,8 @@ public class HideOut : MonoBehaviour
 
     public void Use(bool use)
     {
+        collider.enabled = !use;
         isUsed = use;
-        messageInput.text = use ? "Press (E) to exit" : "Press (E) to hide";
+        messageInput.text = use ? "Press (Space) to exit" : "Press (Space) to hide";
     }
 }

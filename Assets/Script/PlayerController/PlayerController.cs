@@ -41,14 +41,14 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("premier if");
             //Debug.Log("veut rentrer");
-            GetHidden(true);
+            GetHidden();
             lastPressed++;
 
         }
         else if (Input.GetButtonDown("Fire1") && lastPressed == 1)
         {
             Debug.Log("deuxi�me if");
-            GetHidden(false);
+            GetHidden();
             lastPressed=0;
         }
     }
@@ -67,20 +67,21 @@ public class PlayerController : MonoBehaviour
         body.velocity = newVelocity;
     }
     
-    private void GetHidden(bool isHidden)
+    private void GetHidden()
     {
 
-        if(!isHidden)
+        if(!isHiding)
         {
-            bufferPosition = transform.position;
-            speed = 0;
-            Debug.Log(bufferPosition);
-            transform.position = currentHideout.gameObject.transform.position;
-            isHiding = true;
+            body.velocity = Vector2.zero;
             currentHideout.Use(true);
+            bufferPosition = transform.position;
+            transform.position = currentHideout.transform.position;
+            isHiding = true;
         }
         else
         {
+            currentHideout.Use(false);
+            
             Vector3 exitPoint = new Vector3();
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
@@ -117,7 +118,6 @@ public class PlayerController : MonoBehaviour
             
             Debug.Log(currentHideout);
             isHiding = false;
-            currentHideout.Use(false);
         }
 
     }
