@@ -19,9 +19,7 @@ public class PlayerController : MonoBehaviour
     [Header("Visual")]
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprRend;
-    [Header("Audio")] 
-    [SerializeField] private SoundGen soundGen;
-
+    
     [HideInInspector] public HideOut currentHideout;
     private Vector3 bufferPosition;
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
