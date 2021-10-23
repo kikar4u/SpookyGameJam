@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class MonsterBehaviour : MonoBehaviour
 {
     [SerializeField] Vector3 target;
-    [SerializeField] float playerPositionDelay;
     PlayerController player;
     private NavMeshAgent agent;
     private bool continueCoroutine = true;
@@ -52,14 +51,14 @@ public class MonsterBehaviour : MonoBehaviour
             //Debug.Log("OnCoroutine: " + Time.time + target);
             if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IsHiding)
             {
-                target = RandomNavmeshLocation(5.0f);
+                target = RandomNavmeshLocation(Random.Range(8.0f, 20.0f));
             }
             else
             {
-                target = RandomNavmeshLocation(5.0f);
+                target = RandomNavmeshLocation(Random.Range(8.0f, 20f));
             }
 
-            yield return new WaitForSeconds(playerPositionDelay);
+            yield return new WaitForSeconds(Random.Range(2.0f, 7.0f));
 
 
 

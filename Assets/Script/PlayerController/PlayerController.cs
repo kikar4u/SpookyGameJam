@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(IsRunning, _multRun > 1);
 
         body.velocity = newVelocity;
+        
     }
     
     private void GetHidden()
