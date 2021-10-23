@@ -23,9 +23,10 @@ public class NoisyZone : MonoBehaviour
         Color newCol = Color.blue;
         newCol.a = 0.1f;
         Gizmos.color = newCol;
-        Gizmos.DrawCube(transform.position, zone.size);
+        Vector3 position = transform.position;
+        Gizmos.DrawCube(position + (Vector3)zone.offset, zone.size);
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position,zone.size);
+        Gizmos.DrawWireCube(position + (Vector3)zone.offset,zone.size);
     }
 
     // Start is called before the first frame update

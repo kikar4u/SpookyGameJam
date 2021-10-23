@@ -1,27 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float speed = 1.0f;
-    private float speedBuffer;
-    private float vertical;
-    private float horizontal;
+    [SerializeField] private float multRun;
     private bool isHiding;
-    private bool hidden; //Jamais utilisé pour le moment, peut être supprimé dans l'état
+    public bool IsHiding => isHiding;
+    
     private int lastPressed;
     [SerializeField] private Rigidbody2D body;
-    public HideOut currentHideout;
+    [SerializeField] private Animator animator;
+    [HideInInspector] public HideOut currentHideout;
     private Vector3 bufferPosition;
-    
+    private static readonly int IsMoving = Animator.StringToHash("isMoving");
+    private static readonly int IsRunning = Animator.StringToHash("isRunning");
+
     // Start is called before the first frame update
     private void Start()
     {
-        speedBuffer = speed;
+
     }
     private void Update()
+    {
+        ControleHiding();
+    }
+    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        if(!isHiding) ControleMoving();
+    }
+
+    private void ControleHiding()
     {
         if (Input.GetButtonDown("Fire1") && !isHiding && currentHideout != null && lastPressed == 0)
         {
@@ -37,44 +51,72 @@ public class PlayerController : MonoBehaviour
             GetHidden(false);
             lastPressed=0;
         }
-
     }
-    // Update is called once per frame
-    private void FixedUpdate()
+    
+    private void ControleMoving()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        float _multRun = Input.GetButton("Fire2") ? multRun : 1;
+        
+        Vector2 newVelocity = new Vector2(horizontal * speed * _multRun, vertical * speed * _multRun);
+
+        animator.SetBool(IsMoving, newVelocity.magnitude > 0);
+        animator.SetBool(IsRunning, _multRun > 1);
+
+        body.velocity = newVelocity;
+    }
+    
+    private void GetHidden(bool isHidden)
     {
 
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        body.velocity = new Vector2(horizontal * speed, vertical * speed);
-        if (Input.GetButton("Fire2"))
-        { 
-            speed = 10.0f;
-            //Debug.Log("i am speed" + speed);
-        }
-        else if(!isHiding)
-        {
-            speed = speedBuffer;
-            //Debug.Log("speed goes back");
-        }
-    }
-    private void GetHidden(bool isNotHidden)
-    {
-
-        if(isNotHidden)
+        if(!isHidden)
         {
             bufferPosition = transform.position;
             speed = 0;
             Debug.Log(bufferPosition);
             transform.position = currentHideout.gameObject.transform.position;
-            hidden = true;
+            isHiding = true;
             currentHideout.Use(true);
         }
         else
         {
+            Vector3 exitPoint = new Vector3();
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+
+            if (Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+            {
+                if (horizontal > 0 && currentHideout.ExitPointRight)
+                {
+                    exitPoint = currentHideout.ExitPointRight.position;
+                }
+                else if(currentHideout.ExitPointLeft)
+                {
+                    exitPoint = currentHideout.ExitPointLeft.position;
+                }
+
+            }
+            else
+            {
+                if (vertical > 0 && currentHideout.ExitPointUp)
+                {
+                    exitPoint = currentHideout.ExitPointUp.position;
+                }
+                else if (currentHideout.ExitPointDown)
+                {
+                    exitPoint = currentHideout.ExitPointDown.position;
+                }
+            }
+
+            if (exitPoint.magnitude == 0) exitPoint = bufferPosition;
+            
+            exitPoint.z = transform.position.z;
+
+            transform.position = exitPoint;
+            
             Debug.Log(currentHideout);
-            speed = speedBuffer;
-            transform.position = bufferPosition;
-            hidden = false;
+            isHiding = false;
             currentHideout.Use(false);
         }
 
