@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool hidden; //Jamais utilisé pour le moment, peut être supprimé dans l'état
     private int lastPressed;
     [SerializeField] private Rigidbody2D body;
-    private GameObject currentHideout;
+    public HideOut currentHideout;
     private Vector3 bufferPosition;
     
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && isHiding && currentHideout != null && lastPressed == 0)
+        if (Input.GetButtonDown("Fire1") && !isHiding && currentHideout != null && lastPressed == 0)
         {
             Debug.Log("premier if");
             //Debug.Log("veut rentrer");
@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
         {
             bufferPosition = transform.position;
             speed = 0;
-            currentHideout.GetComponent<BoxCollider2D>().isTrigger = true;
             Debug.Log(bufferPosition);
             transform.position = currentHideout.gameObject.transform.position;
             hidden = true;
@@ -75,28 +74,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log(currentHideout);
             speed = speedBuffer;
             transform.position = bufferPosition;
-            currentHideout.GetComponent<BoxCollider2D>().isTrigger = false;
             hidden = false;
 
         }
 
-    }
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.CompareTag("hideout"))
-        {
-            //Debug.Log("HIDE" + col.gameObject.GetComponent<Transform>().position);
-            isHiding = true;
-            currentHideout = col.gameObject;
-        }
-
-
-    }
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if(col.gameObject.CompareTag("hideout"))
-        {
-            isHiding = false;
-        }
     }
 }

@@ -14,7 +14,7 @@ public class SoundGen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TestGenSound());
+        
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class SoundGen : MonoBehaviour
         }
     }
 
+    /*
     private IEnumerator TestGenSound()
     {
         while (true)
@@ -47,4 +48,5 @@ public class SoundGen : MonoBehaviour
             
         }
     }
+    */
 }
