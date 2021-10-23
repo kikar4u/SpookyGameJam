@@ -86,6 +86,7 @@ public class SoundCirlce : MonoBehaviour
         Collider2D other = Physics2D.OverlapCircle(transform.position, size, monsterMask);
         if (other && other.TryGetComponent(out MonsterBehaviour monster))
         {
+            
             monster.GetPlayerPosition();
         }
     }

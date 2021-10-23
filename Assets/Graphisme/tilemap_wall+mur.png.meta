@@ -86,6 +86,15 @@ TextureImporter:
   - first:
       213: 9208983268013592475
     second: tilemap_wall+mur_27
+  - first:
+      213: -323926111631102970
+    second: tilemap_wall+mur_28
+  - first:
+      213: 3006365095931885291
+    second: tilemap_wall+mur_29
+  - first:
+      213: -53908181644189404
+    second: tilemap_wall+mur_30
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -547,8 +556,8 @@ TextureImporter:
       name: tilemap_wall+mur_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 256
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -568,8 +577,8 @@ TextureImporter:
       name: tilemap_wall+mur_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
+        x: 384
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -652,8 +661,8 @@ TextureImporter:
       name: tilemap_wall+mur_22
       rect:
         serializedVersion: 2
-        x: 640
-        y: 384
+        x: 0
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -673,8 +682,8 @@ TextureImporter:
       name: tilemap_wall+mur_23
       rect:
         serializedVersion: 2
-        x: 768
-        y: 384
+        x: 128
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -694,8 +703,8 @@ TextureImporter:
       name: tilemap_wall+mur_24
       rect:
         serializedVersion: 2
-        x: 896
-        y: 384
+        x: 256
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -715,8 +724,8 @@ TextureImporter:
       name: tilemap_wall+mur_25
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 384
+        x: 384
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -736,8 +745,8 @@ TextureImporter:
       name: tilemap_wall+mur_26
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 384
+        x: 512
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -757,8 +766,8 @@ TextureImporter:
       name: tilemap_wall+mur_27
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 256
+        y: 128
         width: 128
         height: 128
       alignment: 0
@@ -770,6 +779,69 @@ TextureImporter:
       bones: []
       spriteID: b9f4770bd71eccf70800000000000000
       internalID: 9208983268013592475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c21ceeaee218bf0800000000000000
+      internalID: -323926111631102970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur_29
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be637285021c8b920800000000000000
+      internalID: 3006365095931885291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur_30
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4216c9e5bca704ff0800000000000000
+      internalID: -53908181644189404
       vertices: []
       indices: 
       edges: []

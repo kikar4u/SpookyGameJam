@@ -5,15 +5,17 @@ using UnityEngine.AI;
 
 public class MonsterBehaviour : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Vector3 target;
+    [SerializeField] float playerPositionDelay;
     PlayerController player;
     private NavMeshAgent agent;
+    private bool continueCoroutine = true;
 
-    [SerializeField] float playerPositionDelay;
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(getPlayerPosition());
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -23,18 +25,48 @@ public class MonsterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
-        
-        if (player.IsHiding)
+        agent.SetDestination(target);
+        //Debug.Log("is hiding" + player.IsHiding);
+    }
+    public void GetPlayerPosition()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
+    public Vector3 RandomNavmeshLocation(float radius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
         {
-            Debug.Log("oH NO");
+            finalPosition = hit.position;
+        }
+        return finalPosition;
+    }
+    IEnumerator getPlayerPosition()
+    {
+        while (continueCoroutine)
+        { //variable that enables you to kill routine
+            //Debug.Log("OnCoroutine: " + Time.time + target);
+            if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IsHiding)
+            {
+                target = RandomNavmeshLocation(5.0f);
+            }
+            else
+            {
+                target = RandomNavmeshLocation(5.0f);
+            }
+
+            yield return new WaitForSeconds(playerPositionDelay);
+
+
+
 
         }
     }
-    public Transform GetPlayerPosition()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        return target;
-    }
-       
+
+
+
 }
