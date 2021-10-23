@@ -55,6 +55,8 @@ public class SoundCirlce : MonoBehaviour
         canBeDrawn = true;
         radius = 0;
         growTime = 0;
+        
+        FireSoundDetection(maxSize);
     }
     
     private void DrawCircle()
@@ -74,6 +76,17 @@ public class SoundCirlce : MonoBehaviour
             };
             
             line.SetPosition(i,newPos);
+        }
+    }
+
+    private void FireSoundDetection(float size)
+    {
+        LayerMask monsterMask = LayerMask.GetMask("Monster");
+        size *= 5;
+        Collider2D other = Physics2D.OverlapCircle(transform.position, size, monsterMask);
+        if (other && other.TryGetComponent(out MonsterBehaviour monster))
+        {
+            
         }
     }
 }

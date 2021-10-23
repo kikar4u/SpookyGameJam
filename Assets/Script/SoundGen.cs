@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -53,7 +54,7 @@ public class SoundGen : MonoBehaviour
             clips = noisyZone.WalkSounds;
         }
         GenSound(soundMult);
-        PlayAudio(clips, soundMult);
+        //PlayAudio(clips, soundMult);
         
     }
 
@@ -75,8 +76,9 @@ public class SoundGen : MonoBehaviour
         audio.Play();
     }
 
-    private void PlayAudio(List<AudioClip> clips, float soundMult)
+    private void PlayAudio([NotNull] List<AudioClip> clips, float soundMult)
     {
+        if (clips == null) throw new ArgumentNullException(nameof(clips));
         PlayAudio(clips[Random.Range(0,clips.Count)], soundMult);
     }
     /*
