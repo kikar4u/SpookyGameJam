@@ -17,7 +17,7 @@ public class PickUpItem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInRange)
+        if (Input.GetButtonDown("Fire1") && isInRange)
         {
             Inventory.instance.content.Add(item);
             Inventory.instance.UpdateInventoryUI();

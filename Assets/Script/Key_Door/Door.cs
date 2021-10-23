@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && isInRange && Inventory.instance.content[Inventory.instance.contentCurrentIndex].id == doorId)
+        if(Input.GetButtonDown("Fire1") && isInRange && Inventory.instance.content[Inventory.instance.contentCurrentIndex].id == doorId)
         {
             animator.SetTrigger("OpenDoor");
             collision.GetComponent<BoxCollider2D>().enabled = false;

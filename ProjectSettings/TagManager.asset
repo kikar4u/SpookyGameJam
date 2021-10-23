@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hideout
   - InteractUI
+  - GameManager
   layers:
   - Default
   - TransparentFX
