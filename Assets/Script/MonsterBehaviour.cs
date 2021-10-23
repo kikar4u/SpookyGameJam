@@ -8,10 +8,11 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField] Transform target;
     PlayerController player;
     private NavMeshAgent agent;
+
+    [SerializeField] float playerPositionDelay;
     // Start is called before the first frame update
     void Start()
     {
-
         target = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
@@ -23,9 +24,17 @@ public class MonsterBehaviour : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
+        
         if (player.IsHiding)
         {
             Debug.Log("oH NO");
+
         }
     }
+    public Transform GetPlayerPosition()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        return target;
+    }
+       
 }
