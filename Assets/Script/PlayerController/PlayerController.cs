@@ -1,20 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+[RequireComponent(typeof(SoundGen))]
 public class PlayerController : MonoBehaviour
 {
 
+    [Header("movements")]
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float multRun;
     private bool isHiding;
     public bool IsHiding => isHiding;
     
-    private int lastPressed;
     [SerializeField] private Rigidbody2D body;
+    [Header("Visual")]
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer sprRend;
+    [Header("Audio")] 
+    [SerializeField] private SoundGen soundGen;
+
     [HideInInspector] public HideOut currentHideout;
     private Vector3 bufferPosition;
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
@@ -37,22 +44,12 @@ public class PlayerController : MonoBehaviour
 
     private void ControleHiding()
     {
-        if (Input.GetButtonDown("Fire1") && !isHiding && currentHideout != null && lastPressed == 0)
+        if (Input.GetButtonDown("Fire1") && currentHideout)
         {
-            Debug.Log("premier if");
-            //Debug.Log("veut rentrer");
             GetHidden();
-            lastPressed++;
-
-        }
-        else if (Input.GetButtonDown("Fire1") && lastPressed == 1)
-        {
-            Debug.Log("deuxi�me if");
-            GetHidden();
-            lastPressed=0;
         }
     }
-    
+
     private void ControleMoving()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -69,13 +66,16 @@ public class PlayerController : MonoBehaviour
     
     private void GetHidden()
     {
-
+        animator.SetBool(IsMoving, false);
+        animator.SetBool(IsRunning, false);
         if(!isHiding)
         {
-            body.velocity = Vector2.zero;
             currentHideout.Use(true);
+            
+            body.velocity = Vector2.zero;
             bufferPosition = transform.position;
             transform.position = currentHideout.transform.position;
+            
             isHiding = true;
         }
         else
@@ -116,7 +116,6 @@ public class PlayerController : MonoBehaviour
 
             transform.position = exitPoint;
             
-            Debug.Log(currentHideout);
             isHiding = false;
         }
 

@@ -7,9 +7,15 @@ using Random = UnityEngine.Random;
 public class SoundGen : MonoBehaviour
 {
 
+    [Header("Visual")]
     [SerializeField] private SoundCirlce soundCircleBase;
     [SerializeField] private Gradient feedBackColors;
     [SerializeField] private float maxColorThreshold;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private List<AudioClip> walkingDefaultSounds = new List<AudioClip>();
+    [SerializeField] private float maxSoundMultThreshold;
     
     // Start is called before the first frame update
     void Start()
@@ -32,11 +38,47 @@ public class SoundGen : MonoBehaviour
         if (Instantiate(soundCircleBase.gameObject, transform.position, new Quaternion())
             .TryGetComponent(out SoundCirlce newSC))
         {
-            Color sCColor = feedBackColors.Evaluate(soundMult / maxColorThreshold);
+            float time = soundMult  / maxColorThreshold ;
+            Color sCColor = feedBackColors.Evaluate(time);
             newSC.InitCircle(soundMult,sCColor);
         }
     }
 
+    public void GenWalkingSound(float soundMult)
+    {
+        List<AudioClip> clips = walkingDefaultSounds;
+        if (IsNoiseZone(out NoisyZone noisyZone))
+        {
+            soundMult += noisyZone.soundMult;
+            clips = noisyZone.WalkSounds;
+        }
+        GenSound(soundMult);
+        PlayAudio(clips, soundMult);
+        
+    }
+
+    private bool IsNoiseZone(out NoisyZone noisyZone)
+    {
+        LayerMask noisyMask = LayerMask.GetMask("Noisy");
+        Collider2D other = Physics2D.OverlapCircle(transform.position, 0.1f, noisyMask);
+        
+        if (other && other.TryGetComponent(out noisyZone)) {/*oups le if moyen util*/}
+        else noisyZone = null;
+        
+        return other;
+    }
+
+    private void PlayAudio(AudioClip audioClip, float soundMult)
+    {
+        audio.volume = soundMult / maxSoundMultThreshold;
+        audio.clip = audioClip;
+        audio.Play();
+    }
+
+    private void PlayAudio(List<AudioClip> clips, float soundMult)
+    {
+        PlayAudio(clips[Random.Range(0,clips.Count)], soundMult);
+    }
     /*
     private IEnumerator TestGenSound()
     {
