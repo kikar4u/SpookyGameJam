@@ -9,7 +9,9 @@ public class NoisyZone : MonoBehaviour
     public float soundMult;
     [SerializeField] private BoxCollider2D zone;
     [SerializeField] private List<AudioClip> walkSounds;
+    [SerializeField] private List<AudioClip> runSounds;
     public List<AudioClip> WalkSounds => walkSounds;
+    public List<AudioClip> RunSounds => runSounds;
 
     private void OnValidate()
     {
