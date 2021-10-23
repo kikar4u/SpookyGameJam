@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && isHiding && currentHideout != null)
+        if (Input.GetButtonDown("Fire1") && isHiding && currentHideout != null && lastPressed == 0)
         {
             Debug.Log("premier if");
             //Debug.Log("veut rentrer");
@@ -31,9 +31,11 @@ public class PlayerController : MonoBehaviour
             lastPressed++;
 
         }
-        if (Input.GetButtonDown("Fire1") && !isHiding && lastPressed == 1)
+        else if (Input.GetButtonDown("Fire1") && lastPressed == 1)
         {
             Debug.Log("deuxi�me if");
+            GetHidden(false);
+            lastPressed=0;
         }
 
     }
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log(bufferPosition);
             transform.position = currentHideout.gameObject.transform.position;
             hidden = true;
-            isHiding = false;
+            
         }
         else
         {
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
             speed = speedBuffer;
             transform.position = bufferPosition;
             currentHideout.GetComponent<BoxCollider2D>().isTrigger = false;
+            hidden = false;
 
         }
 
