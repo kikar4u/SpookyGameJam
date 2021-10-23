@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class MonsterBehaviour : MonoBehaviour
 {
     [SerializeField] Transform target;
+    GameObject player;
     private NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
