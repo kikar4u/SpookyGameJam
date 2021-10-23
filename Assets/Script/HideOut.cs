@@ -17,6 +17,7 @@ public class HideOut : MonoBehaviour
     private void OnValidate()
     {
         if (!trigger) TryGetComponent(out trigger);
+        if(signInput) signInput.worldCamera = Camera.main;
     }
 
 
