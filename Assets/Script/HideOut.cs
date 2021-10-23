@@ -12,6 +12,7 @@ public class HideOut : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Canvas signInput;
     [SerializeField] private TextMeshProUGUI messageInput;
+    private bool isUsed;
 
     private void OnValidate()
     {
@@ -54,5 +55,11 @@ public class HideOut : MonoBehaviour
     private void SetSignVisible(bool visible)
     {
         signInput.gameObject.SetActive(visible);
+    }
+
+    public void Use(bool use)
+    {
+        isUsed = use;
+        messageInput.text = use ? "Press (E) to exit" : "Press (E) to hide";
     }
 }

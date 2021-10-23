@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log(bufferPosition);
             transform.position = currentHideout.gameObject.transform.position;
             hidden = true;
-            
+            currentHideout.Use(true);
         }
         else
         {
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
             speed = speedBuffer;
             transform.position = bufferPosition;
             hidden = false;
-
+            currentHideout.Use(false);
         }
 
     }
