@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundGen : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class SoundGen : MonoBehaviour
 
     public void GenSound(float soundMult)
     {
+        if (!soundCircleBase)
+            throw new NullReferenceException(
+                "Fo rajouter une référence au prefab CercleSon dans le champ de référence \"Sound Circle Base\"");
+        
         if (Instantiate(soundCircleBase.gameObject, transform.position, new Quaternion())
             .TryGetComponent(out SoundCirlce newSC))
         {
