@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233cc619c826a25489bd501e184722b6, type: 3}
   m_Name: BlueKey
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   name: BlueKey
   description: Open a door
   image: {fileID: 21300000, guid: fe0762232a1f4e44283577a87687e093, type: 3}
+  color: {r: 0.16660735, g: 0.5864637, b: 0.9056604, a: 1}

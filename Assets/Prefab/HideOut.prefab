@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1759198268884004910}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ExitPointRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 5178666764722471444}
   - component: {fileID: 9021731322608057810}
   - component: {fileID: 1670519319571750306}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981559643251210904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.006, y: -0.392, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4012982540365006275}
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5632238889159691638, guid: 32c891118809f334593b418adebcc465, type: 3}
+  m_Sprite: {fileID: 6264866322059566292, guid: 32c891118809f334593b418adebcc465, type: 3}
   m_Color: {r: 0.4528302, g: 0.37783247, b: 0.13883945, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,18 +126,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3663202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7421875, y: 1.7734375}
+    oldSize: {x: 0.96875, y: 1.640625}
     newSize: {x: 1.7421875, y: 1.7734375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.8714665}
   m_EdgeRadius: 0
 --- !u!1 &4012982540365006274
 GameObject:
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2027826221660639491}
   - component: {fileID: 3755797867830614495}
   - component: {fileID: 4496031706666227138}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SignInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8417251595045480588}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ExitPointDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5036690695536472658}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ExitPointLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 5336656733406385216}
   - component: {fileID: 2271917538795001077}
   - component: {fileID: 6091754037175803008}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: MessageInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6365704818772031820}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ExitPointUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6590047013789946130}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

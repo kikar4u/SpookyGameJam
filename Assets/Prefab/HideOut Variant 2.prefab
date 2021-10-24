@@ -39,6 +39,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.356
       objectReference: {fileID: 0}
+    - target: {fileID: 3007241982458863101, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
+      propertyPath: m_Radius
+      value: 1.2982742
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007241982458863101, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.33827412
+      objectReference: {fileID: 0}
     - target: {fileID: 4012982540365006274, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
       propertyPath: m_Name
       value: HideOut Variant 2
@@ -107,5 +115,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1915630767906240499, guid: 32c891118809f334593b418adebcc465, type: 3}
+    - target: {fileID: 9021731322608057810, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}

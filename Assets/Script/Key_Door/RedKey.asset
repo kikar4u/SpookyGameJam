@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233cc619c826a25489bd501e184722b6, type: 3}
   m_Name: RedKey
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
   name: RedKey
   description: Open a door
   image: {fileID: 21300000, guid: a6947cf901fc6894196cc6477e3f8b80, type: 3}
+  color: {r: 0.9528302, g: 0.12135102, b: 0.12135102, a: 1}
