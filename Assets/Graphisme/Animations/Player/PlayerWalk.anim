@@ -21,9 +21,9 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 3854724844420860089, guid: edd423d36cd44724fb01221f578a1874, type: 3}
-    - time: 0.6
+    - time: 0.5
       value: {fileID: -7757007121721039533, guid: edd423d36cd44724fb01221f578a1874, type: 3}
-    - time: 1.1
+    - time: 0.9
       value: {fileID: -7757007121721039533, guid: edd423d36cd44724fb01221f578a1874, type: 3}
     attribute: m_Sprite
     path: sprite
@@ -52,7 +52,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +79,7 @@ AnimationClip:
     floatParameter: 0.5
     intParameter: 0
     messageOptions: 0
-  - time: 0.6
+  - time: 0.5
     functionName: GenWalkingSound
     data: 
     objectReferenceParameter: {fileID: 0}
