@@ -29,9 +29,7 @@ public class PickUpItem : MonoBehaviour
     public void Pick()
     {
         if (!Inventory.instance) throw new NullReferenceException("Y manque un Inventaire dans cette scene");
-        Inventory.instance.content.Add(item);
-        Inventory.instance.UpdateInventoryUI();
-        //interactUI.enabled = false;
+        Inventory.instance.AddItem(item);
         Destroy(gameObject);
     }
     

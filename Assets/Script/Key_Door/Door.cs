@@ -42,20 +42,21 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-        if (!Inventory.instance) throw new NullReferenceException("Y a pas d'inventaire dansa cette scene");
-        if(!isOpen && Inventory.instance.content[Inventory.instance.contentCurrentIndex].id == doorId)
+        if (!Inventory.instance) throw new NullReferenceException("Y a pas d'inventaire dans cette scene");
+        if(!isOpen)
         {
-            animator.SetTrigger(OpenDoor);
-            // collision.GetComponent<BoxCollider2D>().enabled = false;
-            // GetComponent<BoxCollider2D>().enabled = false;
-            interactUI.gameObject.SetActive(false);
-            Inventory.instance.content.Remove(Inventory.instance.content[Inventory.instance.contentCurrentIndex]);
-            Inventory.instance.UpdateInventoryUI();
-            isOpen = true;
-        }
-        else
-        {
-            textInfo.text = "Wrong Key";
+            if (Inventory.instance.Contain(doorId, out Item key))
+            {
+                animator.SetTrigger(OpenDoor);
+                interactUI.gameObject.SetActive(false);
+                
+                Inventory.instance.RemoveItem(key);
+                isOpen = true;
+            }
+            else
+            {
+                textInfo.text = "Don't have right key";
+            }
         }
     }
 
