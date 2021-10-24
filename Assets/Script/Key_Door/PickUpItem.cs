@@ -5,14 +5,14 @@ public class PickUpItem : MonoBehaviour
 {
     // normalement ca doit pouvoir ramasser d'autres objets que les cles
 
-    private Text interactUI;
+    //private Text interactUI;
     private bool isInRange;
 
     public Item item;
 
     void Awake()
     {
-        interactUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<Text>();
+        //interactUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<Text>();
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class PickUpItem : MonoBehaviour
         {
             Inventory.instance.content.Add(item);
             Inventory.instance.UpdateInventoryUI();
-            interactUI.enabled = false;
+            //interactUI.enabled = false;
             Destroy(gameObject);
         }
     }
@@ -30,7 +30,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            interactUI.enabled = true;
+            //interactUI.enabled = true;
             isInRange = true;
         }
     }
@@ -39,7 +39,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            interactUI.enabled = false;
+            //interactUI.enabled = false;
             isInRange = false;
         }
     }
