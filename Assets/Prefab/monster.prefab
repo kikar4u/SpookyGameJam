@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1271978608497722430}
   - component: {fileID: 965225752534052465}
   - component: {fileID: 3473444696370091897}
+  - component: {fileID: 1565903402068848884}
   m_Layer: 8
   m_Name: monster
   m_TagString: Untagged
@@ -83,7 +84,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6581807138736486346, guid: 49504e3eb62de054f9b4482bfb96d4c2, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b9bb9c255bc89a34e9a1b93b8bc8b4d6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -93,8 +94,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2.47
-  MaxDistance: 9.4
+  MinDistance: 1.19
+  MaxDistance: 3.32
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -129,7 +130,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -144,7 +145,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -159,7 +160,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -222,6 +223,104 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6da26e47c0dc1e44ebca34b1258713bb, type: 3}
   - {fileID: 8300000, guid: 51fe13032e831cc4f897f61ab89d3638, type: 3}
   - {fileID: 8300000, guid: 0ae18e0d5547af64ea571cee7647cd18, type: 3}
+  roarSound: {fileID: 8300000, guid: b9bb9c255bc89a34e9a1b93b8bc8b4d6, type: 3}
+  RoarSource: {fileID: 1565903402068848884}
+--- !u!82 &1565903402068848884
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758988739382253990}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6581807138736486346, guid: 49504e3eb62de054f9b4482bfb96d4c2, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 0.61
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0.97
+  MinDistance: 0.72
+  MaxDistance: 2.36
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.97050095
+      inSlope: -4.8051853
+      outSlope: -4.8051853
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.08933777
+    - serializedVersion: 3
+      time: 0.260746
+      value: 0.012641907
+      inSlope: -0.059725344
+      outSlope: -0.059725344
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.33810806
+      value: 0.99578476
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3889535642789952065
 GameObject:
   m_ObjectHideFlags: 0

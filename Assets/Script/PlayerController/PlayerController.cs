@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     [Header("Visual")]
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprRend;
-    
+    [Header("Sound")]
+    [SerializeField]  public AudioSource source;
+    [SerializeField]  public AudioClip Soundclip;
     [HideInInspector] public HideOut currentHideout;
     [HideInInspector] public Door currentDoor;
     [HideInInspector] public PickUpItem currentItem;
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
             body.velocity = Vector2.zero;
             bufferPosition = transform.position;
             transform.position = currentHideout.transform.position;
-            
+            source.PlayOneShot(Soundclip);
             isHiding = true;
         }
         else

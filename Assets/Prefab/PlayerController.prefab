@@ -207,6 +207,8 @@ MonoBehaviour:
   body: {fileID: 3953046368654398675}
   animator: {fileID: 670837499}
   sprRend: {fileID: 5535698597370001188}
+  source: {fileID: 5660665594489101762}
+  clip: {fileID: 8300000, guid: 2ad367e81e92cfb43861850323498376, type: 3}
   currentHideout: {fileID: 0}
   currentDoor: {fileID: 0}
   currentItem: {fileID: 0}

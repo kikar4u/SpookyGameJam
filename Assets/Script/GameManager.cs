@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(false);
         pauseUI.SetActive(false);
         winUI.SetActive(false);
+        DoPause(false);
     }
     public void GameOver(bool isGameOver)
     {
