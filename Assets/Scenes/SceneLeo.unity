@@ -253,85 +253,77 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1148783576
-GameObject:
+--- !u!1001 &1293875172
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1148783578}
-  - component: {fileID: 1148783577}
-  m_Layer: 0
-  m_Name: SoundGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1148783577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148783576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa29c9e637673f46a0d3641d49bed3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundCircleBase: {fileID: 1369185770759960157, guid: 627e15e5ba9874c498403c3b6c14ae33, type: 3}
-  feedBackColors:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0.915, g: 0.40452635, b: 0.024078965, a: 1}
-    key2: {r: 0.73800004, g: 0.09594233, b: 0, a: 0}
-    key3: {r: 0.73800004, g: 0.09594233, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 35659
-    ctime1: 48573
-    ctime2: 65535
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  maxColorThreshold: 4
-  audio: {fileID: 0}
-  walkingDefaultSounds: []
-  maxSoundMultThreshold: 0
---- !u!4 &1148783578
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148783576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2420335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.99875355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096424, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096425, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: rotationPorte
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729227017398096426, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897550105450779921, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897550105450779921, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11a65175e7782a248994c0389b6e4681, type: 3}
 --- !u!1001 &1985009119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012982540365006275, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4012982540365006275, guid: 211fb4acac7bcfd4baec9d65c7692ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4490327480448268456, guid: 37658d5dd5785b942bd2255f7824ff7b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4490327480448268456, guid: 37658d5dd5785b942bd2255f7824ff7b, type: 3}
       propertyPath: m_LocalPosition.x

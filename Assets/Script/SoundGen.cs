@@ -17,6 +17,7 @@ public class SoundGen : MonoBehaviour
     [SerializeField] private AudioSource audio;
     [SerializeField] private List<AudioClip> walkingDefaultSounds = new List<AudioClip>();
     [SerializeField] private List<AudioClip> runnningDefaultSounds = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> doorOpeningSounds = new List<AudioClip>();
     [SerializeField] private float maxSoundMultThreshold;
     
     // Start is called before the first frame update
@@ -68,6 +69,13 @@ public class SoundGen : MonoBehaviour
         }
         GenSound(soundMult);
         //PlayAudio(clips, soundMult);
+    }
+    
+    public void GenDoorOpeningSound(float soundMult)
+    {
+        List<AudioClip> clips = doorOpeningSounds;
+        GenSound(soundMult);
+        //if(!audio.isPlaying)PlayAudio(clips, soundMult);
     }
     
     private bool IsNoiseZone(out NoisyZone noisyZone)

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer sprRend;
     
     [HideInInspector] public HideOut currentHideout;
+    [HideInInspector] public Door currentDoor;
     private Vector3 bufferPosition;
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
@@ -42,9 +43,10 @@ public class PlayerController : MonoBehaviour
 
     private void ControleHiding()
     {
-        if (Input.GetButtonDown("Fire1") && currentHideout)
+        if (Input.GetButtonDown("Fire1") )
         {
-            GetHidden();
+            if(currentHideout) GetHidden();
+            if(currentDoor) OpenDoor();
         }
     }
 
@@ -61,6 +63,12 @@ public class PlayerController : MonoBehaviour
 
         body.velocity = newVelocity;
         
+    }
+
+
+    private void OpenDoor()
+    {
+        currentDoor.Open();
     }
     
     private void GetHidden()
