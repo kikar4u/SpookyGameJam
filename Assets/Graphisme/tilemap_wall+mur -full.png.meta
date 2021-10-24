@@ -32,6 +32,24 @@ TextureImporter:
   - first:
       213: 5406453228038940070
     second: tilemap_wall+mur -full_9
+  - first:
+      213: 1915630767906240499
+    second: tilemap_wall+mur -full_10
+  - first:
+      213: 2832124045217862976
+    second: tilemap_wall+mur -full_11
+  - first:
+      213: 2400783444836076686
+    second: tilemap_wall+mur -full_12
+  - first:
+      213: -8585715688735165424
+    second: tilemap_wall+mur -full_13
+  - first:
+      213: -1523751625011878527
+    second: tilemap_wall+mur -full_14
+  - first:
+      213: -3354289161761093198
+    second: tilemap_wall+mur -full_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -178,10 +196,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_2
       rect:
         serializedVersion: 2
-        x: 308
-        y: 1058
-        width: 38
-        height: 30
+        x: 426
+        y: 1056
+        width: 45
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +217,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 781
-        width: 223
-        height: 227
+        x: 771
+        y: 1027
+        width: 124
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +238,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 905
-        width: 380
-        height: 121
+        x: 899
+        y: 931
+        width: 124
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +259,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_5
       rect:
         serializedVersion: 2
-        x: 365
-        y: 788
-        width: 166
-        height: 90
+        x: 308
+        y: 1058
+        width: 38
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +280,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_6
       rect:
         serializedVersion: 2
-        x: 77
-        y: 590
-        width: 101
-        height: 100
+        x: 16
+        y: 781
+        width: 223
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +301,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_7
       rect:
         serializedVersion: 2
-        x: 296
-        y: 412
-        width: 176
-        height: 200
+        x: 260
+        y: 905
+        width: 376
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +322,10 @@ TextureImporter:
       name: tilemap_wall+mur -full_8
       rect:
         serializedVersion: 2
-        x: 552
-        y: 384
-        width: 48
-        height: 128
+        x: 640
+        y: 918
+        width: 128
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,6 +343,132 @@ TextureImporter:
       name: tilemap_wall+mur -full_9
       rect:
         serializedVersion: 2
+        x: 365
+        y: 788
+        width: 166
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a56608f094970b40800000000000000
+      internalID: 5406453228038940070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_10
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 644
+        width: 251
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f73cd1b800b59a10800000000000000
+      internalID: 1915630767906240499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 590
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0459d0b50d9bd4720800000000000000
+      internalID: 2832124045217862976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_12
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 640
+        width: 30
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cc71cb2db415120800000000000000
+      internalID: 2400783444836076686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_13
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 412
+        width: 176
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0143176f11969d880800000000000000
+      internalID: -8585715688735165424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_14
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 384
+        width: 48
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1852e3168fb8adae0800000000000000
+      internalID: -1523751625011878527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_wall+mur -full_15
+      rect:
+        serializedVersion: 2
         x: 0
         y: 128
         width: 1026
@@ -336,8 +480,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a56608f094970b40800000000000000
-      internalID: 5406453228038940070
+      spriteID: 2b9894777cb2371d0800000000000000
+      internalID: -3354289161761093198
       vertices: []
       indices: 
       edges: []
