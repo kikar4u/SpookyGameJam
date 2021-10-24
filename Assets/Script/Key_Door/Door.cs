@@ -16,12 +16,12 @@ public class Door : MonoBehaviour
     [Header("Interface")]
     [SerializeField] private Canvas interactUI;
     [SerializeField] private TextMeshProUGUI textInfo;
-    private bool isInRange;
 
     [Header("Visual")]
     [SerializeField] private Animator animator;
 
     private bool isOpen;
+    private static readonly int OpenDoor = Animator.StringToHash("OpenDoor");
 
     private void OnValidate()
     {
@@ -45,7 +45,7 @@ public class Door : MonoBehaviour
         if (!Inventory.instance) throw new NullReferenceException("Y a pas d'inventaire dansa cette scene");
         if(!isOpen && Inventory.instance.content[Inventory.instance.contentCurrentIndex].id == doorId)
         {
-            animator.SetTrigger("OpenDoor");
+            animator.SetTrigger(OpenDoor);
             // collision.GetComponent<BoxCollider2D>().enabled = false;
             // GetComponent<BoxCollider2D>().enabled = false;
             interactUI.gameObject.SetActive(false);

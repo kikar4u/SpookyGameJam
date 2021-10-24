@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     
     [HideInInspector] public HideOut currentHideout;
     [HideInInspector] public Door currentDoor;
+    [HideInInspector] public PickUpItem currentItem;
     private Vector3 bufferPosition;
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") )
         {
             if(currentHideout) GetHidden();
+            if(currentItem) PickUp();
             if(currentDoor) OpenDoor();
         }
     }
@@ -69,6 +71,11 @@ public class PlayerController : MonoBehaviour
     private void OpenDoor()
     {
         currentDoor.Open();
+    }
+
+    private void PickUp()
+    {
+        currentItem.Pick();
     }
     
     private void GetHidden()

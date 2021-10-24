@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,41 +8,48 @@ public class PickUpItem : MonoBehaviour
     // normalement ca doit pouvoir ramasser d'autres objets que les cles
 
     //private Text interactUI;
-    private bool isInRange;
-
     public Item item;
+    
+    [Header("Interface")]
+    [SerializeField] private Canvas interactUI;
+    [SerializeField] private TextMeshProUGUI textInfo;
 
-    void Awake()
+ 
+
+    protected virtual void Awake()
     {
-        //interactUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<Text>();
+        interactUI.gameObject.SetActive(false);
+        interactUI.worldCamera = Camera.main;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && isInRange)
-        {
-            Inventory.instance.content.Add(item);
-            Inventory.instance.UpdateInventoryUI();
-            //interactUI.enabled = false;
-            Destroy(gameObject);
-        }
     }
 
+    public void Pick()
+    {
+        if (!Inventory.instance) throw new NullReferenceException("Y manque un Inventaire dans cette scene");
+        Inventory.instance.content.Add(item);
+        Inventory.instance.UpdateInventoryUI();
+        //interactUI.enabled = false;
+        Destroy(gameObject);
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.TryGetComponent(out PlayerController player))
         {
-            //interactUI.enabled = true;
-            isInRange = true;
+            interactUI.gameObject.SetActive(true);
+            player.currentItem = this;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.TryGetComponent(out PlayerController player))
         {
-            //interactUI.enabled = false;
-            isInRange = false;
+            interactUI.gameObject.SetActive(false);
+            player.currentItem = null;
         }
     }
 }

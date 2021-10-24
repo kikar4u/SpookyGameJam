@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.497, y: 0.492}
-  m_SizeDelta: {x: 1.4115, y: 0.2279}
+  m_AnchoredPosition: {x: 0.313, y: 0.577}
+  m_SizeDelta: {x: 1.9427, y: 0.2279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3709649072288774425
 CanvasRenderer:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.1
-  m_fontSizeBase: 0.1
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -143,8 +143,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3638481661398836987}
-  - component: {fileID: 3638481661398836985}
   - component: {fileID: 606132510135785656}
+  - component: {fileID: 5004360416811401515}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -168,19 +168,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3638481661398836985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3638481661398836967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da30392a8dd13224f87a7b5d7dcd5bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: f2de3552b3d23ef43b3f1140bc28f8f3, type: 2}
 --- !u!58 &606132510135785656
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +184,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5004360416811401515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3638481661398836967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae9df52e6b83974eaa842ec0f1f3b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f2de3552b3d23ef43b3f1140bc28f8f3, type: 2}
+  interactUI: {fileID: 2128327148708371232}
+  textInfo: {fileID: 6447131216886851069}
+  stone: {fileID: 6712059237931123435}
+  stoneColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6076192560094304109
 GameObject:
   m_ObjectHideFlags: 0
