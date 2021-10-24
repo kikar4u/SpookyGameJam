@@ -204,6 +204,13 @@ AnimationClip:
     floatParameter: 4
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: speedMonster
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4
+    intParameter: 0
+    messageOptions: 0
   - time: 0.11111111
     functionName: GenDoorOpeningSound
     data: 
@@ -325,6 +332,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2
     functionName: GenDoorOpeningSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
+    functionName: backtonormal
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 4
