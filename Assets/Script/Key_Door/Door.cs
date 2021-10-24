@@ -2,6 +2,8 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Data;
+using System.Collections.Generic;
 
 public class Door : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class Door : MonoBehaviour
     [Header("Cette valeur override l'axe z de la rotation dans l'éditeur")]
     [SerializeField] private float rotationDoor;
     [SerializeField] private Transform rotationRoot;
-    
+    private List<GameObject> content = new List<GameObject>();
     [Header("Interface")]
     [SerializeField] private Canvas interactUI;
     [SerializeField] private TextMeshProUGUI textInfo;
@@ -83,6 +85,23 @@ public class Door : MonoBehaviour
         {
             interactUI.gameObject.SetActive(false);
             player.currentDoor = null;
+        }
+    }
+    public void speedMonster(float speed)
+    {
+        
+        Array table = GameObject.FindGameObjectsWithTag("Monster");
+        foreach (GameObject item in table)
+        {
+            item.GetComponent<MonsterBehaviour>().changeSpeed(speed);
+        }
+    }
+    public void backtonormal(float speed)
+    {
+        Array table = GameObject.FindGameObjectsWithTag("Monster");
+        foreach (GameObject item in table)
+        {
+            item.GetComponent<MonsterBehaviour>().backToNormalSpeed(speed);
         }
     }
 }

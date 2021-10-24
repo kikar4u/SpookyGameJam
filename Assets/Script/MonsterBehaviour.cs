@@ -73,8 +73,14 @@ public class MonsterBehaviour : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver(true);
         }
     }
-
-
+    public void changeSpeed(float speed)
+    {
+        agent.speed = agent.speed + speed;
+    }
+    public void backToNormalSpeed(float speed)
+    {
+        agent.speed = agent.speed - speed;
+    }
     private void LookForward()
     {
         Vector2 direction = agent.velocity.normalized;
