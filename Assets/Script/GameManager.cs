@@ -60,4 +60,23 @@ public class GameManager : MonoBehaviour
             pauseMenu();
         }
     }
+    
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadLevel()
+    {
+        
+        SceneManager.LoadScene("Level1");
+    }
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL
+        Application.OpenURL("about:blank");
+#endif
+        Application.Quit();
+    }
 }
