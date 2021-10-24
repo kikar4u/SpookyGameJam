@@ -56,7 +56,7 @@ public class SoundGen : MonoBehaviour
             clips = noisyZone.WalkSounds;
         }
         GenSound(soundMult);
-        //PlayAudio(clips, soundMult);
+        PlayAudio(clips, soundMult);
     }
 
     public void GenRunningSound(float soundMult)
@@ -68,14 +68,14 @@ public class SoundGen : MonoBehaviour
             clips = noisyZone.RunSounds;
         }
         GenSound(soundMult);
-        //PlayAudio(clips, soundMult);
+        PlayAudio(clips, soundMult);
     }
     
     public void GenDoorOpeningSound(float soundMult)
     {
         List<AudioClip> clips = doorOpeningSounds;
         GenSound(soundMult);
-        //if(!audio.isPlaying)PlayAudio(clips, soundMult);
+        if(!audio.isPlaying)PlayAudio(clips, soundMult);
     }
     
     private bool IsNoiseZone(out NoisyZone noisyZone)

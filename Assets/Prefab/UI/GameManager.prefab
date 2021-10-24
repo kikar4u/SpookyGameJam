@@ -546,10 +546,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1611472731985748667}
-  m_Layer: 5
-  m_Name: GameOver
-  m_TagString: Untagged
+  - component: {fileID: 1639414718825519283}
+  - component: {fileID: 4039219476343978530}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

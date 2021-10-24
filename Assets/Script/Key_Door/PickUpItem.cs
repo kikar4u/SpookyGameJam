@@ -9,6 +9,8 @@ public class PickUpItem : MonoBehaviour
 
     //private Text interactUI;
     public Item item;
+    private AudioSource audio;
+    public AudioClip clip;
     
     [Header("Interface")]
     [SerializeField] private Canvas interactUI;
@@ -20,6 +22,7 @@ public class PickUpItem : MonoBehaviour
     {
         interactUI.gameObject.SetActive(false);
         interactUI.worldCamera = Camera.main;
+        
     }
 
     void Update()
@@ -30,7 +33,12 @@ public class PickUpItem : MonoBehaviour
     {
         if (!Inventory.instance) throw new NullReferenceException("Y manque un Inventaire dans cette scene");
         Inventory.instance.AddItem(item);
+        audio = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AudioSource>();
+        audio.PlayOneShot(clip);
         Destroy(gameObject);
+
+
+
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

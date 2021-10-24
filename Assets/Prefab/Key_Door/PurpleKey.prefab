@@ -56,6 +56,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004360416811401515, guid: 5d9a024a8f120154db9ab963942990f6, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: ad4ee67a4269c9e418b795a03479a97a, type: 2}
+    - target: {fileID: 5004360416811401515, guid: 5d9a024a8f120154db9ab963942990f6, type: 3}
       propertyPath: stoneColor.b
       value: 0.89987373
       objectReference: {fileID: 0}

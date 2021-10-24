@@ -119,7 +119,8 @@ MonoBehaviour:
   audio: {fileID: 410572282366781936}
   walkingDefaultSounds: []
   runnningDefaultSounds: []
-  doorOpeningSounds: []
+  doorOpeningSounds:
+  - {fileID: 8300000, guid: c284a63a5246cc04aa501d419f2f9237, type: 3}
   maxSoundMultThreshold: 4
 --- !u!61 &7687770654226238629
 BoxCollider2D:

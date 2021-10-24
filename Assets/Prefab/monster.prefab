@@ -218,6 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 2404736307688668123}
   walkingDefaultSounds:
+  - {fileID: 8300000, guid: 420dd6caa21165d4f9e66ea162870ba1, type: 3}
+  - {fileID: 8300000, guid: 6da26e47c0dc1e44ebca34b1258713bb, type: 3}
+  - {fileID: 8300000, guid: 51fe13032e831cc4f897f61ab89d3638, type: 3}
   - {fileID: 8300000, guid: 0ae18e0d5547af64ea571cee7647cd18, type: 3}
 --- !u!1 &3889535642789952065
 GameObject:
