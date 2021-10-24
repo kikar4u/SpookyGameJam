@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameOverUI.SetActive(false);
-        pauseUI.SetActive(false);
-        winUI.SetActive(false);
+        if(gameOverUI) gameOverUI.SetActive(false);
+        if(pauseUI) pauseUI.SetActive(false);
+        if (winUI) winUI.SetActive(false);
         DoPause(false);
     }
     public void GameOver(bool isGameOver)
