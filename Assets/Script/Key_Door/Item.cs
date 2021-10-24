@@ -4,8 +4,9 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public int id;
-    // correspondance entre clé et porte
+    // correspondance entre clï¿½ et porte
     public string name;
     public string description;
     public Sprite image;
+    public Color color;
 }

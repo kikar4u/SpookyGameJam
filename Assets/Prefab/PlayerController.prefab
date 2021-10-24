@@ -163,8 +163,8 @@ GameObject:
   - component: {fileID: 3953046368654398679}
   - component: {fileID: 6039603192893599607}
   - component: {fileID: 3953046368654398675}
-  - component: {fileID: 3953046368654398672}
-  - component: {fileID: 3989853064947151384}
+  - component: {fileID: 670837499}
+  - component: {fileID: 670837500}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player
@@ -205,9 +205,10 @@ MonoBehaviour:
   speed: 2
   multRun: 2
   body: {fileID: 3953046368654398675}
-  animator: {fileID: 3989853064947151384}
+  animator: {fileID: 670837499}
   sprRend: {fileID: 5535698597370001188}
   currentHideout: {fileID: 0}
+  currentDoor: {fileID: 0}
 --- !u!114 &6039603192893599607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +255,7 @@ MonoBehaviour:
   audio: {fileID: 5660665594489101762}
   walkingDefaultSounds: []
   runnningDefaultSounds: []
+  doorOpeningSounds: []
   maxSoundMultThreshold: 3
 --- !u!50 &3953046368654398675
 Rigidbody2D:
@@ -276,33 +278,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &3953046368654398672
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3953046368654398676}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!95 &3989853064947151384
+--- !u!95 &670837499
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -321,6 +297,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &670837500
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953046368654398676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.65, y: 1.09}
+  m_Direction: 0
 --- !u!1 &4298731016385982430
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,8 +456,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.6415094, g: 0.027233878, b: 0.027233878, a: 1}
+  m_Sprite: {fileID: -9085405917439128512, guid: edd423d36cd44724fb01221f578a1874, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -10,7 +10,8 @@ public class Door : MonoBehaviour
     //public GameObject collision;
     // un gameObject enfant de Door qui contient un box collider (isTrigger=false) pour bloquer le personnage, celui de Door est déjà utilisé pour détecter le joueur
     [Header("Cette valeur override l'axe z de la rotation dans l'éditeur")]
-    [SerializeField] private float rotationPorte;
+    [SerializeField] private float rotationDoor;
+    [SerializeField] private Transform rotationRoot;
     
     [Header("Interface")]
     [SerializeField] private Canvas interactUI;
@@ -24,13 +25,14 @@ public class Door : MonoBehaviour
 
     private void OnValidate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, rotationPorte);
+        if(rotationRoot)rotationRoot.rotation = Quaternion.Euler(0, 0, rotationDoor);
         CounterRotationForUI();
     }
 
     void Awake()
     {
         interactUI.gameObject.SetActive(false);
+        interactUI.worldCamera = Camera.main;
     }
 
     void Update()
@@ -40,6 +42,7 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+        if (!Inventory.instance) throw new NullReferenceException("Y a pas d'inventaire dansa cette scene");
         if(!isOpen && Inventory.instance.content[Inventory.instance.contentCurrentIndex].id == doorId)
         {
             animator.SetTrigger("OpenDoor");
@@ -58,7 +61,7 @@ public class Door : MonoBehaviour
 
     private void CounterRotationForUI()
     {
-        if(interactUI) interactUI.transform.localRotation = Quaternion.Euler(0,0,-transform.eulerAngles.z);
+        if(interactUI && rotationRoot) interactUI.transform.localRotation = Quaternion.Euler(0,0,-rotationRoot.eulerAngles.z);
     }
 
     // Entree dans le collider de la porte
