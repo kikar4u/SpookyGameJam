@@ -6,9 +6,9 @@ public class Win : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().isWin = true;
+            GameManager.instance.Win();
         }
     }
 }
