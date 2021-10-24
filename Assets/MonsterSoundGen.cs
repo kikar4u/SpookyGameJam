@@ -8,7 +8,7 @@ public class MonsterSoundGen : MonoBehaviour
     [SerializeField] private AudioSource audio;
     [SerializeField] private List<AudioClip> walkingDefaultSounds = new List<AudioClip>();
     [SerializeField] public AudioClip roarSound;
-    [SerializeField] public AudioSource RoarSource;
+    [SerializeField] public AudioSource roarSource;
     // Start is called before the first frame update
     public void GenWalkingSound(float soundMult)
     {
@@ -18,7 +18,7 @@ public class MonsterSoundGen : MonoBehaviour
     public void GenRoarSound(float soundMult)
     {
         
-        if (!audio.isPlaying) RoarSource.PlayOneShot(roarSound);
+        if (!roarSource.isPlaying) roarSource.PlayOneShot(roarSound);
 
     }
     private void PlayAudio(AudioClip audioClip, float soundMult)

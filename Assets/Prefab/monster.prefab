@@ -94,8 +94,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.19
-  MaxDistance: 3.32
+  MinDistance: 4.570671
+  MaxDistance: 10.933939
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -107,21 +107,30 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -2.7910316
+      outSlope: -2.7910316
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7168675
+      value: 0.5
+      inSlope: -0.6977579
+      outSlope: -0.6977579
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.35843375
+      inSlope: -0.35857707
+      outSlope: -0.35857707
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -160,7 +169,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 0.596
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -224,7 +233,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51fe13032e831cc4f897f61ab89d3638, type: 3}
   - {fileID: 8300000, guid: 0ae18e0d5547af64ea571cee7647cd18, type: 3}
   roarSound: {fileID: 8300000, guid: b9bb9c255bc89a34e9a1b93b8bc8b4d6, type: 3}
-  RoarSource: {fileID: 1565903402068848884}
+  roarSource: {fileID: 1565903402068848884}
 --- !u!82 &1565903402068848884
 AudioSource:
   m_ObjectHideFlags: 0
@@ -245,10 +254,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.97
-  MinDistance: 0.72
-  MaxDistance: 2.36
+  MinDistance: 2.1385345
+  MaxDistance: 11.22
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -256,19 +265,28 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.97050095
-      inSlope: -4.8051853
-      outSlope: -4.8051853
+      time: 0.15566522
+      value: 0.9967842
+      inSlope: -5.2486815
+      outSlope: -5.2486815
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.08933777
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.260746
-      value: 0.012641907
-      inSlope: -0.059725344
-      outSlope: -0.059725344
+      time: 0.3702904
+      value: 0.47747803
+      inSlope: -1.1173264
+      outSlope: -1.1173264
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.42313027
+      outWeight: 0.19969815
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.19067638
+      outSlope: -0.19067638
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
