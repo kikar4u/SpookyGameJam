@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
-        List<KeyUnitUI> newContent = content;
+        List<KeyUnitUI> newContent = new List<KeyUnitUI>(content);
         foreach (KeyUnitUI unit in content)
         {
             if (unit.Item == item)
