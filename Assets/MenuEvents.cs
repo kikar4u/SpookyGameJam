@@ -15,6 +15,10 @@ public class MenuEvents : MonoBehaviour
     {
         
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void LoadLevel()
     {
         

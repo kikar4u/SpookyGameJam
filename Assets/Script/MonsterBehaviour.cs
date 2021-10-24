@@ -16,7 +16,7 @@ public class MonsterBehaviour : MonoBehaviour
     void Start()
     {
         StartCoroutine(getPlayerPosition());
-        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //target = GameObject.FindGameObjectWithTag("Player").transform.position;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
