@@ -209,6 +209,7 @@ MonoBehaviour:
   sprRend: {fileID: 5535698597370001188}
   currentHideout: {fileID: 0}
   currentDoor: {fileID: 0}
+  currentItem: {fileID: 0}
 --- !u!114 &6039603192893599607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +460,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -9085405917439128512, guid: edd423d36cd44724fb01221f578a1874, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5

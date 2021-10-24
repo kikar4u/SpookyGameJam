@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ControleHiding();
+        LookForward();
     }
     // Update is called once per frame
     private void FixedUpdate()
@@ -133,5 +134,12 @@ public class PlayerController : MonoBehaviour
             isHiding = false;
         }
 
+    }
+
+    private void LookForward()
+    {
+        Vector3 direction = body.velocity.normalized;
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, -Vector3.forward);
     }
 }

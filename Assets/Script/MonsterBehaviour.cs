@@ -5,10 +5,12 @@ using UnityEngine.AI;
 
 public class MonsterBehaviour : MonoBehaviour
 {
-    [SerializeField] Vector3 target;
+    [SerializeField] private Vector3 target;
+    [SerializeField] private Animator animator;
     PlayerController player;
     private NavMeshAgent agent;
     private bool continueCoroutine = true;
+    private static readonly int IsMoving = Animator.StringToHash("isMoving");
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,9 @@ public class MonsterBehaviour : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target);
+        LookForward();
+        if(agent.velocity.magnitude > 0) animator.SetBool(IsMoving, true);
+        else animator.SetBool(IsMoving, false);
         //Debug.Log("is hiding" + player.IsHiding);
     }
     public void GetPlayerPosition()
@@ -59,20 +64,21 @@ public class MonsterBehaviour : MonoBehaviour
             }
 
             yield return new WaitForSeconds(Random.Range(2.0f, 7.0f));
-
-
-
-
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver(true);
         }
     }
 
 
-
+    private void LookForward()
+    {
+        Vector2 direction = agent.velocity.normalized;
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, -Vector3.forward);
+    }
 }
