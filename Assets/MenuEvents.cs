@@ -26,6 +26,11 @@ public class MenuEvents : MonoBehaviour
     }
     public void ExitGame()
     {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL
+        Application.OpenURL("about:blank");
+#endif
         Application.Quit();
     }
 }
