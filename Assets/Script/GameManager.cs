@@ -6,31 +6,48 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager cela;
+
+    public static GameManager instance
+    {
+        get
+        {
+            if (!cela) cela = FindObjectOfType<GameManager>();
+            return cela;
+        }
+    }
+    
     // Start is called before the first frame update
-    [SerializeField] bool gameOver = false;
-    [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject pauseUI;
-    public bool isWin = false;
+    
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject winUI;
+    private bool isWin;
+    private bool gameOver;
 
     void Start()
     {
         gameOverUI.SetActive(false);
         pauseUI.SetActive(false);
+        winUI.SetActive(false);
     }
     public void GameOver(bool isGameOver)
     {
         gameOver = isGameOver;
         gameOverUI.SetActive(true);
-        if (isGameOver)
-        {
-            Time.timeScale = 0.0f;
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
-        }
+        DoPause(isGameOver);
+    }
 
+    public void Win()
+    {
+        isWin = true;
+        winUI.SetActive(true);
+        DoPause(true);
+    }
 
+    private void DoPause(bool pause)
+    {
+        Time.timeScale = pause ? 0 : 1;
     }
     public void pauseMenu()
     {
@@ -50,10 +67,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit") && gameOver)
+        if (Input.GetButtonDown("Submit") && (gameOver || isWin))
         {
             SceneManager.LoadScene("Level1");
-            GameOver(false);
         }
         if (Input.GetButtonDown("Start"))
         {
