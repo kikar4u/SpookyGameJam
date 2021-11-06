@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233cc619c826a25489bd501e184722b6, type: 3}
   m_Name: Yellow_Key
   m_EditorClassIdentifier: 
-  id: 0
+  id: 6
   name: 
   description: 
-  image: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  image: {fileID: 993907984154126062, guid: 32c891118809f334593b418adebcc465, type: 3}
+  color: {r: 1, g: 0.8126906, b: 0, a: 1}
