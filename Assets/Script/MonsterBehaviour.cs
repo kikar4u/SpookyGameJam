@@ -77,6 +77,14 @@ public class MonsterBehaviour : MonoBehaviour
     {
         agent.speed = agent.speed + speed;
     }
+    public void changeStoppingDistance(float distance)
+    {
+        agent.stoppingDistance = 4;
+    }
+    public void backToStoppingDistance()
+    {
+        agent.stoppingDistance = 0;
+    }
     public void backToNormalSpeed(float speed)
     {
         agent.speed = agent.speed - speed;

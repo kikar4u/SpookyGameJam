@@ -42,6 +42,22 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if(!isHiding) ControleMoving();
+        if (isHiding)
+        {
+            Array table = GameObject.FindGameObjectsWithTag("Monster");
+            foreach (GameObject item in table)
+            {
+                item.GetComponent<MonsterBehaviour>().changeStoppingDistance(4.0f);
+            }
+        }
+        else
+        {
+            Array table = GameObject.FindGameObjectsWithTag("Monster");
+            foreach (GameObject item in table)
+            {
+                item.GetComponent<MonsterBehaviour>().backToStoppingDistance();
+            }
+        }
     }
 
     private void ControleHiding()
@@ -68,7 +84,7 @@ public class PlayerController : MonoBehaviour
         body.velocity = newVelocity;
         
     }
-
+   
 
     private void OpenDoor()
     {
